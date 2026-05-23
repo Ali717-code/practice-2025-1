@@ -6,8 +6,10 @@
 
 | Файл | Описание |
 |------|----------|
-| [README.md](README.md) | Оглавление документации |
-| [practice_documentation.md](practice_documentation.md) | Подробная документация о ходе выполнения практики |
+| [README.md](README.md) | Оглавление документации (этот файл) |
+| [practice_documentation.md](practice_documentation.md) | Общая документация о ходе выполнения практики |
+| [variative_task.md](variative_task.md) | Пошаговое руководство по созданию Python Text Editor (вариативная часть) |
+| [events.md](events.md) | Отчёт об участии в мероприятии Startup HUB (МФТИ) |
 
 ## Краткое описание практики
 
