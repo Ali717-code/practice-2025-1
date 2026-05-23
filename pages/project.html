@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект — Python Text Editor</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span class="snake">🐍</span>
+            <span>Python Text Editor</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="topic.html">Тема</a></li>
+            <li><a href="project.html" class="active">Проект</a></li>
+            <li><a href="events.html">Мероприятия</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" style="padding: 60px 20px;">
+    <div class="hero-content">
+        <div class="hero-badge">💻 Реализация проекта</div>
+        <h1>Этапы разработки <span>текстового редактора</span></h1>
+        <p>Подробное описание каждого этапа реализации проекта с результатами и пояснениями к коду.</p>
+        <div class="hero-buttons">
+            <a href="https://github.com/Ali717-code/practice-2025-1/tree/master/src" target="_blank" class="btn btn-primary">📂 Исходный код</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="section-title">
+        <h2>Этапы <span>разработки</span></h2>
+        <div class="divider"></div>
+        <p>Проект разбит на 5 последовательных этапов, каждый из которых добавляет новую функциональность</p>
+    </div>
+
+    <!-- Этап 1 -->
+    <div class="info-section">
+        <h2>⚙️ Этап 1: Основной каркас приложения</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            На первом этапе создаётся базовая структура приложения: главное окно, текстовая область с полосой прокрутки и строка состояния. Реализован объектно-ориентированный подход — весь редактор инкапсулирован в класс <code>TextEditor</code>.
+        </p>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">✅</span>
+                <div class="text"><strong>Класс TextEditor</strong> — наследует от <code>tk.Tk</code>, хранит состояние приложения (текущий файл, признак изменений).</div>
+            </li>
+            <li>
+                <span class="icon">✅</span>
+                <div class="text"><strong>Виджет Text</strong> — многострочная область редактирования с настроенным шрифтом Consolas 12pt и автоматическим переносом слов.</div>
+            </li>
+            <li>
+                <span class="icon">✅</span>
+                <div class="text"><strong>Строка состояния</strong> — нижняя панель с отображением числа строк, слов и символов, обновляемых в реальном времени.</div>
+            </li>
+        </ul>
+        <div class="tags" style="margin-top: 16px;">
+            <span class="tag">tk.Tk</span>
+            <span class="tag">tk.Text</span>
+            <span class="tag yellow">tk.Frame</span>
+            <span class="tag">Scrollbar</span>
+        </div>
+    </div>
+
+    <!-- Этап 2 -->
+    <div class="info-section">
+        <h2>📂 Этап 2: Работа с файлами</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Реализованы операции создания нового файла, открытия существующего и сохранения текущего документа. Для диалогов открытия/сохранения используется модуль <code>tkinter.filedialog</code>. При наличии несохранённых изменений пользователь получает предупреждение.
+        </p>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">📄</span>
+                <div class="text"><strong>Новый файл (Ctrl+N)</strong> — очистка текстовой области с проверкой несохранённых изменений.</div>
+            </li>
+            <li>
+                <span class="icon">📂</span>
+                <div class="text"><strong>Открыть файл (Ctrl+O)</strong> — диалог выбора файла с фильтром по расширению (.txt, .py, .md и др.).</div>
+            </li>
+            <li>
+                <span class="icon">💾</span>
+                <div class="text"><strong>Сохранить (Ctrl+S)</strong> — сохранение в текущий файл; если файл новый, открывается диалог «Сохранить как».</div>
+            </li>
+            <li>
+                <span class="icon">💾</span>
+                <div class="text"><strong>Сохранить как (Ctrl+Shift+S)</strong> — диалог выбора имени и пути нового файла.</div>
+            </li>
+        </ul>
+        <div class="tags" style="margin-top: 16px;">
+            <span class="tag">filedialog</span>
+            <span class="tag">messagebox</span>
+            <span class="tag yellow">open()</span>
+            <span class="tag">encoding=utf-8</span>
+        </div>
+    </div>
+
+    <!-- Этап 3 -->
+    <div class="info-section">
+        <h2>✂️ Этап 3: Меню и операции редактирования</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Создана полноценная строка меню с тремя разделами: «Файл», «Правка» и «Вид». Реализованы стандартные операции редактирования через меню и горячие клавиши.
+        </p>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">🍽️</span>
+                <div class="text"><strong>Строка меню</strong> — разделы «Файл», «Правка», «Вид» с вложенными пунктами и разделителями.</div>
+            </li>
+            <li>
+                <span class="icon">✂️</span>
+                <div class="text"><strong>Вырезать/Копировать/Вставить</strong> — Ctrl+X, Ctrl+C, Ctrl+V через буфер обмена системы.</div>
+            </li>
+            <li>
+                <span class="icon">↩️</span>
+                <div class="text"><strong>Отмена/Повтор (Ctrl+Z / Ctrl+Y)</strong> — многоуровневая история действий через встроенный механизм виджета Text.</div>
+            </li>
+            <li>
+                <span class="icon">🔠</span>
+                <div class="text"><strong>Выделить всё (Ctrl+A)</strong> — мгновенное выделение всего содержимого документа.</div>
+            </li>
+        </ul>
+        <div class="tags" style="margin-top: 16px;">
+            <span class="tag">tk.Menu</span>
+            <span class="tag">bind()</span>
+            <span class="tag yellow">event_generate</span>
+        </div>
+    </div>
+
+    <!-- Этап 4 -->
+    <div class="info-section">
+        <h2>🔍 Этап 4: Поиск и смена темы</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Реализованы расширенные функции: диалог поиска с подсветкой найденных вхождений и переключение между светлой и тёмной темой оформления.
+        </p>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">🔍</span>
+                <div class="text"><strong>Поиск (Ctrl+F)</strong> — всплывающее окно поиска. Найденные фрагменты подсвечиваются жёлтым цветом через теги виджета Text.</div>
+            </li>
+            <li>
+                <span class="icon">🌙</span>
+                <div class="text"><strong>Тёмная тема</strong> — фон #1e1e1e, текст #d4d4d4 — стиль VS Code для комфортной работы в темноте.</div>
+            </li>
+            <li>
+                <span class="icon">☀️</span>
+                <div class="text"><strong>Светлая тема</strong> — белый фон и чёрный текст для работы при дневном освещении.</div>
+            </li>
+        </ul>
+        <div class="tags" style="margin-top: 16px;">
+            <span class="tag">tk.Toplevel</span>
+            <span class="tag">text.tag_add()</span>
+            <span class="tag yellow">text.tag_config()</span>
+            <span class="tag">configure(bg=)</span>
+        </div>
+    </div>
+
+    <!-- Этап 5 -->
+    <div class="info-section">
+        <h2>🎨 Этап 5: Финальная полировка и документация</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Добавлены иконка приложения, всплывающие подсказки, диалог «О программе» и написана полная документация к коду. Проведено тестирование на всех поддерживаемых платформах.
+        </p>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">ℹ️</span>
+                <div class="text"><strong>Диалог «О программе»</strong> — версия, имя автора, используемые технологии.</div>
+            </li>
+            <li>
+                <span class="icon">💬</span>
+                <div class="text"><strong>Docstrings</strong> — документация ко всем методам и классам в формате Google-style.</div>
+            </li>
+            <li>
+                <span class="icon">🧪</span>
+                <div class="text"><strong>Тестирование</strong> — проверка работы на Windows 10/11 и Linux Ubuntu 22.04.</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section-title" style="margin-top: 60px;">
+        <h2>Структура <span>файлов проекта</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="code-block">
+<span class="comment"># Структура директории src/</span>
+src/
+├── main.py          <span class="comment"># Точка входа, запуск приложения</span>
+├── editor.py        <span class="comment"># Основной класс TextEditor</span>
+└── README.md        <span class="comment"># Документация по запуску</span>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://github.com/Ali717-code/practice-2025-1/tree/master/src" target="_blank" class="btn btn-primary">
+            📂 Открыть исходный код на GitHub
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>🐍 Python Text Editor &mdash; Проектная практика 2026 &bull; Жамолдинов Жасурбек Иброимжонович</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема — Python Text Editor</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span class="snake">🐍</span>
+            <span>Python Text Editor</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="topic.html" class="active">Тема</a></li>
+            <li><a href="project.html">Проект</a></li>
+            <li><a href="events.html">Мероприятия</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" style="padding: 60px 20px;">
+    <div class="hero-content">
+        <div class="hero-badge">📚 Тема вариативной части</div>
+        <h1>Python: Create a <span>Simple Text Editor</span></h1>
+        <p>Изучение разработки настольных GUI-приложений на Python с использованием библиотеки Tkinter на примере текстового редактора.</p>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="info-section">
+        <h2>🎯 О теме задания</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+            Тема выбрана из коллекции проектов <a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank">Build Your Own X</a> на GitHub. Задание предполагает самостоятельную реализацию полноценного текстового редактора на языке Python, изучение принципов GUI-программирования и применение навыков объектно-ориентированного программирования.
+        </p>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Tkinter</span>
+            <span class="tag yellow">GUI-программирование</span>
+            <span class="tag">ООП</span>
+            <span class="tag yellow">Desktop-приложение</span>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>Что такое <span>текстовый редактор</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="info-section">
+        <h2>📖 Теоретическая база</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; font-size: 0.95rem;">
+            Текстовый редактор — это программное обеспечение, предназначенное для создания и редактирования текстовых файлов. В отличие от текстовых процессоров (Microsoft Word, LibreOffice), текстовые редакторы работают с «чистым» текстом без форматирования.
+        </p>
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; font-size: 0.95rem;">
+            Примеры текстовых редакторов: Notepad (Windows), gedit (Linux), VS Code, Sublime Text, Vim, Emacs. Понимание устройства текстового редактора помогает глубже освоить принципы программирования GUI-приложений, работы с файловой системой и обработки пользовательского ввода.
+        </p>
+    </div>
+
+    <div class="section-title">
+        <h2>Что такое <span>Tkinter</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">📦</div>
+            <h3>Стандартная библиотека</h3>
+            <p>Tkinter входит в стандартную поставку Python — не требует дополнительной установки. Доступен на всех платформах: Windows, macOS, Linux.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🪟</div>
+            <h3>Виджеты</h3>
+            <p>Tkinter предоставляет широкий набор готовых виджетов: кнопки, поля ввода, текстовые области, меню, диалоговые окна и многое другое.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔗</div>
+            <h3>Event-driven</h3>
+            <p>Программирование на основе событий: каждое действие пользователя (клик, нажатие клавиши) вызывает соответствующую функцию-обработчик.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎛️</div>
+            <h3>Компоновщики</h3>
+            <p>Три способа расположения виджетов: pack (последовательно), grid (таблица), place (абсолютные координаты).</p>
+        </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 60px;">
+        <h2>Ключевые <span>концепции</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <ul class="feature-list">
+        <li>
+            <span class="icon">🏗️</span>
+            <div class="text">
+                <strong>Объектно-ориентированный подход:</strong> приложение строится как класс, наследующий от <code>tk.Tk</code>. Инкапсуляция логики и интерфейса в одном объекте упрощает сопровождение кода.
+            </div>
+        </li>
+        <li>
+            <span class="icon">📜</span>
+            <div class="text">
+                <strong>Виджет Text:</strong> основа редактора — многострочное текстовое поле с поддержкой тегов, маркеров и операций поиска/замены. Позволяет форматировать выделенные фрагменты.
+            </div>
+        </li>
+        <li>
+            <span class="icon">📂</span>
+            <div class="text">
+                <strong>Работа с файловой системой:</strong> модули <code>os</code>, <code>pathlib</code> и <code>filedialog</code> позволяют открывать, сохранять файлы через системные диалоги.
+            </div>
+        </li>
+        <li>
+            <span class="icon">⌨️</span>
+            <div class="text">
+                <strong>Горячие клавиши:</strong> метод <code>bind()</code> позволяет назначать обработчики на клавиши и их комбинации (Ctrl+S, Ctrl+O и т.д.).
+            </div>
+        </li>
+        <li>
+            <span class="icon">🍽️</span>
+            <div class="text">
+                <strong>Меню приложения:</strong> класс <code>Menu</code> позволяет создавать строку меню с вложенными пунктами и разделителями.
+            </div>
+        </li>
+        <li>
+            <span class="icon">🔄</span>
+            <div class="text">
+                <strong>Главный цикл:</strong> метод <code>mainloop()</code> запускает цикл обработки событий — программа «ждёт» действий пользователя и реагирует на них.
+            </div>
+        </li>
+    </ul>
+
+    <div class="section-title" style="margin-top: 60px;">
+        <h2>Пример <span>кода</span></h2>
+        <div class="divider"></div>
+        <p>Базовая структура текстового редактора на Python</p>
+    </div>
+
+    <div class="code-block">
+<span class="keyword">import</span> tkinter <span class="keyword">as</span> tk
+<span class="keyword">from</span> tkinter <span class="keyword">import</span> filedialog, messagebox
+
+<span class="keyword">class</span> <span class="class-name">TextEditor</span>(tk.Tk):
+    <span class="keyword">def</span> <span class="function">__init__</span>(self):
+        <span class="function">super</span>().__init__()
+        self.title(<span class="string">"Python Text Editor"</span>)
+        self.geometry(<span class="string">"900x600"</span>)
+        self.current_file = <span class="keyword">None</span>
+        self._create_menu()
+        self._create_editor()
+
+    <span class="keyword">def</span> <span class="function">_create_editor</span>(self):
+        <span class="comment"># Создание текстовой области с прокруткой</span>
+        frame = tk.Frame(self)
+        frame.pack(fill=tk.BOTH, expand=<span class="keyword">True</span>)
+
+        scrollbar = tk.Scrollbar(frame)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        self.text_area = tk.Text(
+            frame,
+            yscrollcommand=scrollbar.set,
+            font=(<span class="string">"Consolas"</span>, <span class="number">12</span>),
+            wrap=tk.WORD
+        )
+        self.text_area.pack(fill=tk.BOTH, expand=<span class="keyword">True</span>)
+        scrollbar.config(command=self.text_area.yview)
+
+    <span class="keyword">def</span> <span class="function">open_file</span>(self):
+        path = filedialog.askopenfilename(
+            filetypes=[(<span class="string">"Text files"</span>, <span class="string">"*.txt"</span>),
+                       (<span class="string">"All files"</span>, <span class="string">"*.*"</span>)]
+        )
+        <span class="keyword">if</span> path:
+            <span class="keyword">with</span> <span class="function">open</span>(path, <span class="string">"r"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:
+                self.text_area.delete(<span class="number">1.0</span>, tk.END)
+                self.text_area.insert(tk.END, f.read())
+            self.current_file = path
+            self.title(f<span class="string">"Python Text Editor — {path}"</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    app = <span class="class-name">TextEditor</span>()
+    app.mainloop()
+    </div>
+
+    <div class="section-title" style="margin-top: 60px;">
+        <h2>Полезные <span>ресурсы</span></h2>
+        <div class="divider"></div>
+    </div>
+
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">📖</div>
+            <h3>Официальная документация Tkinter</h3>
+            <p>Полное справочное руководство по всем виджетам и методам библиотеки.</p>
+            <a href="https://docs.python.org/3/library/tkinter.html" target="_blank" class="btn btn-secondary" style="margin-top: 14px; font-size: 0.85rem; padding: 8px 18px;">Открыть →</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔨</div>
+            <h3>Build Your Own X</h3>
+            <p>Коллекция проектов для самостоятельной реализации, включая текстовые редакторы.</p>
+            <a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" class="btn btn-secondary" style="margin-top: 14px; font-size: 0.85rem; padding: 8px 18px;">Открыть →</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Python GUI Programming</h3>
+            <p>Учебные материалы и примеры по созданию GUI-приложений на Python.</p>
+            <a href="https://realpython.com/python-gui-tkinter/" target="_blank" class="btn btn-secondary" style="margin-top: 14px; font-size: 0.85rem; padding: 8px 18px;">Открыть →</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>🐍 Python Text Editor &mdash; Проектная практика 2026 &bull; Жамолдинов Жасурбек Иброимжонович</p>
+</footer>
+
+</body>
+</html>

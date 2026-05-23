@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мероприятия — Python Text Editor</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.03);
+            border-color: var(--python-yellow);
+        }
+        .photo-placeholder {
+            width: 100%;
+            height: 220px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 2px dashed var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .photo-placeholder .ph-icon { font-size: 2rem; margin-bottom: 8px; }
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--python-blue), var(--python-yellow));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--python-yellow);
+            border: 3px solid var(--primary);
+        }
+        .timeline-item h3 {
+            color: var(--python-yellow);
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 700px) {
+            .photo-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <span class="snake">🐍</span>
+            <span>Python Text Editor</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="topic.html">Тема</a></li>
+            <li><a href="project.html">Проект</a></li>
+            <li><a href="events.html" class="active">Мероприятия</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" style="padding: 60px 20px;">
+    <div class="hero-content">
+        <div class="hero-badge">🎪 Участие в мероприятиях</div>
+        <h1>Startup <span>HUB</span></h1>
+        <p>Участие в образовательных мероприятиях в рамках проектной практики в МФТИ.</p>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- Основное мероприятие -->
+    <div class="event-card" style="margin-bottom: 40px;">
+        <div class="event-info">
+            <div class="event-tag">🏆 Образовательное мероприятие</div>
+            <h3>Startup HUB — МФТИ</h3>
+            <p>
+                Интенсивная образовательная программа по предпринимательству и инновациям на базе Московского физико-технического института. Участники прошли обучение по основам стартап-деятельности, командной работе и защите проектных идей.
+            </p>
+            <div class="event-meta">
+                <span>📍 МФТИ, Москва</span>
+                <span>📅 2026 год</span>
+                <span>👥 ~35 участников</span>
+                <span>🏅 Сертификат выдан</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фотографии -->
+    <div class="info-section">
+        <h2>📸 Фотоотчёт</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">
+            Фотографии с мероприятия Startup HUB в МФТИ.
+        </p>
+        <div class="photo-grid">
+            <img src="../images/event1.jpg" alt="Групповое фото с сертификатами — Startup HUB МФТИ" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span>event1.jpg</div>
+
+            <img src="../images/event2.jpg" alt="Работа с идеями проекта — Startup HUB" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span>event2.jpg</div>
+
+            <img src="../images/event3.jpg" alt="Командная работа — Startup HUB" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span>event3.jpg</div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 12px;">
+            * Добавьте фотографии event1.jpg, event2.jpg, event3.jpg в папку <code>site/images/</code>
+        </p>
+    </div>
+
+    <!-- Программа мероприятия -->
+    <div class="info-section">
+        <h2>📋 Программа мероприятия</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Знакомство и введение</h3>
+                <p>Знакомство участников, представление организаторов и программы. Обзор целей и задач образовательного интенсива.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Лекция: основы стартапа</h3>
+                <p>Теоретический блок о командах стартапа, ролях участников (Hacker, Hipster, Hustler), ключевых понятиях предпринимательства.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Воркшоп: генерация идей</h3>
+                <p>Практическая сессия по генерации и визуализации проектных идей. Работа в командах, использование шаблона «Идея проекта».</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Командная работа</h3>
+                <p>Формирование команд стартапов, распределение ролей, проработка проектных идей, заполнение Business Model Canvas.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Защита идей и сертификация</h3>
+                <p>Презентация проектных идей, обратная связь от экспертов. Торжественное вручение сертификатов участникам.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Чему я научился -->
+    <div class="info-section">
+        <h2>💡 Чему я научился</h2>
+        <ul class="feature-list">
+            <li>
+                <span class="icon">🎯</span>
+                <div class="text"><strong>Постановка целей стартапа:</strong> как формулировать чёткую цель проекта и описывать целевую аудиторию.</div>
+            </li>
+            <li>
+                <span class="icon">👥</span>
+                <div class="text"><strong>Командная работа:</strong> понимание ролей в стартап-команде (технический специалист, дизайнер, менеджер продаж).</div>
+            </li>
+            <li>
+                <span class="icon">🗣️</span>
+                <div class="text"><strong>Презентация идей:</strong> навыки краткой и убедительной презентации проектной идеи перед аудиторией.</div>
+            </li>
+            <li>
+                <span class="icon">🔄</span>
+                <div class="text"><strong>Итерационный подход:</strong> практика быстрого прототипирования и получения обратной связи.</div>
+            </li>
+            <li>
+                <span class="icon">🌐</span>
+                <div class="text"><strong>Нетворкинг:</strong> знакомство с коллегами из разных направлений, обмен опытом и идеями.</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Сертификат -->
+    <div class="certificate-box">
+        <div class="cert-icon">🏆</div>
+        <h3>Сертификат участника Startup HUB</h3>
+        <p>Жамолдинов Жасурбек Иброимжонович успешно прошёл образовательную программу Startup HUB, организованную при поддержке МФТИ.</p>
+        <div class="cert-id">ID: aQcwNDuXk54zJunEd</div>
+        <p style="margin-top: 12px; font-size: 0.85rem;">
+            Верификация: <a href="https://study-techtraining.mipt.ru/training/preview/6mP4F3QpW3aTrcShB" target="_blank">study-techtraining.mipt.ru</a>
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>🐍 Python Text Editor &mdash; Проектная практика 2026 &bull; Жамолдинов Жасурбек Иброимжонович</p>
+</footer>
+
+</body>
+</html>
